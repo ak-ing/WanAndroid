@@ -1,4 +1,4 @@
-package com.aking.wanandroid.base
+package com.aking.wanandroid.ui.vdb
 
 import android.app.Activity
 import androidx.annotation.LayoutRes

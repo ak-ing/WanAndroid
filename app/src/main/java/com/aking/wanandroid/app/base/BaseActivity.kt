@@ -1,4 +1,4 @@
-package com.aking.wanandroid.base
+package com.aking.wanandroid.app.base
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

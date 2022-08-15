@@ -1,4 +1,4 @@
-package com.aking.wanandroid.base
+package com.aking.wanandroid.app.base
 
 import android.content.Context
 import android.os.Bundle
@@ -14,7 +14,7 @@ import com.aking.wanandroid.util.TAG
  * God bless my code!
  * @Description: Fragment基类
  */
-class BaseFragment : Fragment() {
+open class BaseFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         AppLog.d(TAG, "onAttach")
