@@ -12,13 +12,13 @@ object AppLog {
     /**
      * Debug 下开启
      */
-    private const val isDebug = true
+    const val ISDEBUG = true
 
     /**
      * [Log.VERBOSE]
      */
     fun v(tag: String = DEFAULT_TAG, msg: String) {
-        if (isDebug) {
+        if (ISDEBUG) {
             Log.v(tag, msg)
         }
     }
@@ -27,7 +27,7 @@ object AppLog {
      * [Log.DEBUG]
      */
     fun d(tag: String = DEFAULT_TAG, msg: String) {
-        if (isDebug) {
+        if (ISDEBUG) {
             Log.d(tag, msg)
         }
     }
@@ -36,7 +36,7 @@ object AppLog {
      * [Log.INFO]
      */
     fun i(tag: String = DEFAULT_TAG, msg: String) {
-        if (isDebug) {
+        if (ISDEBUG) {
             Log.i(tag, msg)
         }
     }
@@ -45,7 +45,7 @@ object AppLog {
      * [Log.WARN]
      */
     fun w(tag: String = DEFAULT_TAG, msg: String) {
-        if (isDebug) {
+        if (ISDEBUG) {
             Log.w(tag, msg)
         }
     }
@@ -54,7 +54,7 @@ object AppLog {
      * [Log.ERROR]
      */
     fun e(tag: String = DEFAULT_TAG, msg: String) {
-        if (isDebug) {
+        if (ISDEBUG) {
             Log.e(tag, msg)
         }
     }
@@ -63,7 +63,7 @@ object AppLog {
      * [Log.ERROR]
      */
     fun e(tag: String = DEFAULT_TAG, msg: String = "", throwable: Throwable) {
-        if (isDebug) {
+        if (ISDEBUG) {
             Log.e(tag, msg, throwable)
         }
     }

@@ -1,4 +1,4 @@
-package com.aking.wanandroid.ui.profile
+package com.aking.wanandroid.ui.playlist
 
 import android.os.Bundle
 import android.view.View
@@ -6,10 +6,11 @@ import com.aking.wanandroid.R
 import com.aking.wanandroid.app.base.VDBaseFragment
 
 /**
- * Created by AK on 2022/8/15 23:13.
+ * Created by Rick on 2022-08-16  11:35.
  * God bless my code!
+ * @Description: 播放列表页
  */
-class ProfileFragment : VDBaseFragment(R.layout.fragment_profile) {
+class PlayListFragment : VDBaseFragment(R.layout.fragment_playlist) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

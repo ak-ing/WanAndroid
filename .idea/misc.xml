@@ -3,7 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/ic_search_48px.xml" value="0.1955" />
+        <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/ic_search_black_48dp.xml" value="0.1955" />
+        <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/outline_search_24.xml" value="0.2265" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/layout/fragment_playlist.xml" value="0.22826086956521738" />
+        <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/layout/fragment_profile.xml" value="0.22826086956521738" />
+        <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/layout/fragment_search.xml" value="0.22826086956521738" />
+        <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/menu/bottom_nav_menu.xml" value="0.24947916666666667" />
         <entry key="..\:/githome/WanAndroid/WanAndroid/app/src/main/res/layout/activity_main.xml" value="0.21603260869565216" />
       </map>
     </option>

@@ -10,7 +10,7 @@ import java.lang.reflect.Type
  * God bless my code!
  * @Description:
  */
-class NetWorkResponseAdapter(private val successType: Type, private val errorHandler: ErrorHandler) :
+class NetworkResponseAdapter(private val successType: Type, private val errorHandler: ErrorHandler?) :
     CallAdapter<Any, Call<Any>> {
 
     override fun responseType(): Type = successType

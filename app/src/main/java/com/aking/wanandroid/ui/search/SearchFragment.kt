@@ -1,4 +1,4 @@
-package com.aking.wanandroid.ui.profile
+package com.aking.wanandroid.ui.search
 
 import android.os.Bundle
 import android.view.View
@@ -6,10 +6,11 @@ import com.aking.wanandroid.R
 import com.aking.wanandroid.app.base.VDBaseFragment
 
 /**
- * Created by AK on 2022/8/15 23:13.
+ * Created by Rick on 2022-08-16  11:40.
  * God bless my code!
+ * @Description: 搜索页面
  */
-class ProfileFragment : VDBaseFragment(R.layout.fragment_profile) {
+class SearchFragment : VDBaseFragment(R.layout.fragment_search) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

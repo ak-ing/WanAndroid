@@ -32,7 +32,7 @@ class GsonResponseBodyConverter<T : Any>(
                 }
             }
             jsonReader.endObject()
-            return if (errorCode != 0) {
+            return if (errorCode != 200) {
                 NetworkResponse.BizError(errorCode, errorMsg)
             } else if (data == null) {
                 /**
