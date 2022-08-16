@@ -12,6 +12,6 @@ class SearchRepository {
 
     private val service = RetrofitManager.getService(SearchService::class.java)
 
-    suspend fun getHotKeyList() = service
+    suspend fun getHotKeyList() = service.getSearchHotKey()
 
 }

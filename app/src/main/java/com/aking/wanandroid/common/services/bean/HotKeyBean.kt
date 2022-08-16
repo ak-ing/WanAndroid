@@ -6,11 +6,6 @@ package com.aking.wanandroid.common.services.bean
  * @Description: 热搜列表(简略)
  */
 data class HotKeyBean(
-    val code: Int,
-    val result: Result
-)
-
-data class Result(
     val hots: List<Hot>
 )
 

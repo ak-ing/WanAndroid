@@ -25,9 +25,9 @@ class GsonResponseBodyConverter<T : Any>(
             var data: T? = null
             while (jsonReader.hasNext()) {
                 when (jsonReader.nextName()) {
-                    "errorCode" -> errorCode = jsonReader.nextInt()
-                    "errorMsg" -> errorMsg = jsonReader.nextString()
-                    "data" -> data = adapter.read(jsonReader)
+                    "code" -> errorCode = jsonReader.nextInt()
+                    "message" -> errorMsg = jsonReader.nextString()
+                    "result","data" -> data = adapter.read(jsonReader)
                     else -> jsonReader.skipValue()
                 }
             }

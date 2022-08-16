@@ -12,9 +12,9 @@ import retrofit2.http.GET
 interface SearchService : BaseService {
 
     /**
-     * 热搜词
+     * 热搜列表(简略)
      */
-    @GET("hotkey/json")
-    suspend fun getSearchHotKey(): NetworkResponse<List<HotKeyBean>>
+    @GET("/search/hot")
+    suspend fun getSearchHotKey(): NetworkResponse<HotKeyBean>
 
 }
