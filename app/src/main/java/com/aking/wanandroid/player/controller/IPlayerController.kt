@@ -2,6 +2,7 @@ package com.aking.wanandroid.player.controller
 
 import android.content.Context
 import com.aking.wanandroid.player.bean.BaseAlbum
+import com.aking.wanandroid.player.bean.BaseSong
 
 /**
  * Created by Rick on 2022-08-17  12:22.
@@ -16,14 +17,14 @@ interface IPlayerController {
     fun init(context: Context)
 
     /**
-     * 载入专辑
+     * 载入播放列表
      */
-    fun loadAlbum(album: BaseAlbum)
+    fun loadSongs(songs: List<BaseSong>)
 
     /**
-     * 切换专辑时。只在从新专辑进入播放页面时切换。
+     * 载入播放列表
      */
-    fun loadAlbum(album: BaseAlbum, playIndex: Int)
+    fun loadSongs(songs: List<BaseSong>, playIndex: Int)
 
     /**
      * 播放音乐

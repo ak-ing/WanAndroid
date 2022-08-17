@@ -1,7 +1,7 @@
 package com.aking.wanandroid.player
 
 import android.content.Context
-import com.aking.wanandroid.player.bean.BaseAlbum
+import com.aking.wanandroid.player.bean.BaseSong
 import com.aking.wanandroid.player.controller.ICacheProxy
 import com.aking.wanandroid.player.controller.IPlayerController
 import com.danikula.videocache.HttpProxyCacheServer
@@ -32,11 +32,11 @@ object PlayerManager : IPlayerController {
         mController.setCacheProxy(cacheProxy)
     }
 
-    override fun loadAlbum(album: BaseAlbum) {
+    override fun loadSongs(songs: List<BaseSong>) {
         TODO("Not yet implemented")
     }
 
-    override fun loadAlbum(album: BaseAlbum, playIndex: Int) {
+    override fun loadSongs(songs: List<BaseSong>, playIndex: Int) {
         TODO("Not yet implemented")
     }
 

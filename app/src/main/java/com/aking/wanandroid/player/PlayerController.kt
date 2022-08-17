@@ -1,7 +1,8 @@
 package com.aking.wanandroid.player
 
 import android.content.Context
-import com.aking.wanandroid.player.bean.BaseAlbum
+import androidx.lifecycle.MutableLiveData
+import com.aking.wanandroid.player.bean.BaseSong
 import com.aking.wanandroid.player.controller.ICacheProxy
 import com.aking.wanandroid.player.controller.IPlayerController
 
@@ -13,9 +14,13 @@ import com.aking.wanandroid.player.controller.IPlayerController
 class PlayerController : IPlayerController {
 
     private lateinit var mCacheProxy: ICacheProxy
+    private val mPlayingInfoManager = PlayingInfoManager()
 
     private val mIsPaused = false
     private val mIsChangingPlayingMusic = false
+
+    private val changeMusicLiveData = MutableLiveData<BaseSong>()
+    private val playingMusicLiveData = MutableLiveData<BaseSong>()
 
     override fun init(context: Context) {
 
@@ -28,13 +33,20 @@ class PlayerController : IPlayerController {
         mCacheProxy = cacheProxy
     }
 
-    override fun loadAlbum(album: BaseAlbum) {
-
+    override fun loadSongs(songs: List<BaseSong>) {
+        setSongs(songs, 0)
     }
 
-    override fun loadAlbum(album: BaseAlbum, playIndex: Int) {
-        TODO("Not yet implemented")
+    override fun loadSongs(songs: List<BaseSong>, playIndex: Int) {
+        setSongs(songs, playIndex)
+        playAudio()
     }
+
+    fun setSongs(songs: List<BaseSong>, playIndex: Int) {
+        mPlayingInfoManager.setSongs(songs)
+        mPlayingInfoManager.setCurrentIndex(playIndex)
+    }
+
 
     override fun playAudio() {
         TODO("Not yet implemented")
