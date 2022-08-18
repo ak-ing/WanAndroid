@@ -14,15 +14,14 @@ import com.danikula.videocache.HttpProxyCacheServer
 object PlayerManager : IPlayerController {
 
     private val mController = PlayerController()
+    private lateinit var mCacheProxy: HttpProxyCacheServer
 
     override fun init(context: Context) {
-        this.init(context) { it ->
-            HttpProxyCacheServer.Builder(context)
-                .fileNameGenerator { it.split("/").last() }
-                .maxCacheSize(1073741824L) // 1GB
-                .build()
-                .getProxyUrl(it)
-        }
+        mCacheProxy = HttpProxyCacheServer.Builder(context)
+            .fileNameGenerator { it.split("/").last() }
+            .maxCacheSize(1073741824L) // 1GB
+            .build()
+        this.init(context) { mCacheProxy.getProxyUrl(it) }
     }
 
     /**

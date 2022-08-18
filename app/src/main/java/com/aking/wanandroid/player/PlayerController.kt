@@ -56,8 +56,6 @@ class PlayerController : IPlayerController {
             }
             setOnInfoListener { mp, what, extra -> true }
             setOnPreparedListener {
-                AppLog.d(TAG, "---------->start")
-                mIsChangingPlayingMusic = false
                 start()
             }
             setOnSeekCompleteListener { }
@@ -89,29 +87,29 @@ class PlayerController : IPlayerController {
 
     override fun playAudio() {
         if (mIsChangingPlayingMusic) {
-            runCatching {
-//                player.stop()
-                player.reset()
-                getUrlAndPlay()
-            }.onFailure {
-                AppLog.d(TAG, "playAudio：播放失败")
-                it.printStackTrace()
+            ioApplicationScope.launch(Dispatchers.IO) {
+                runCatching {
+                    player.reset()
+                    player.setDataSource(mCacheProxy.getCacheUrl(getSongUrl()))
+                    player.prepare()
+                    mIsChangingPlayingMusic = false
+                    player.start()
+                }.onFailure {
+                    AppLog.d(TAG, "playAudio：播放失败")
+                    it.printStackTrace()
+                }
             }
         } else if (mIsPaused) {
             resumeAudio()
         }
     }
 
-    private fun getUrlAndPlay(): String {
-        ioApplicationScope.launch {
-            val songId = mPlayingInfoManager.getCurrentSongId().toString()
-            val urlData = service.getSongUrlById(songId).getOrElse { SongUrlData() }
-            val cacheUrl = mCacheProxy.getCacheUrl(urlData[0].url)
-            AppLog.d(TAG, cacheUrl)
-            player.setDataSource(urlData[0].url)
-            player.prepareAsync()
-        }
-        return ""
+    private suspend fun getSongUrl(): String {
+        val songId = mPlayingInfoManager.getCurrentSongId().toString()
+        val urlData = service.getSongUrlById(songId).getOrElse { SongUrlData() }
+        val url = urlData[0].url.replace("http", "https")
+        AppLog.d(TAG, url)
+        return url
     }
 
     override fun playAudio(index: Int) {
