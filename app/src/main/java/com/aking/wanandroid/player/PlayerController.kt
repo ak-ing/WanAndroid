@@ -3,11 +3,16 @@ package com.aking.wanandroid.player
 import android.content.Context
 import android.media.MediaPlayer
 import androidx.lifecycle.MutableLiveData
+import com.aking.wanandroid.common.http.RetrofitManager
+import com.aking.wanandroid.common.http.adapter.getOrElse
+import com.aking.wanandroid.common.services.BaseService
+import com.aking.wanandroid.common.services.bean.SongUrlData
 import com.aking.wanandroid.player.bean.BaseSong
 import com.aking.wanandroid.player.controller.ICacheProxy
 import com.aking.wanandroid.player.controller.IPlayerController
 import com.aking.wanandroid.util.AppLog
 import com.aking.wanandroid.util.TAG
+import kotlinx.coroutines.*
 
 /**
  * Created by Rick on 2022-08-17  15:33.
@@ -19,6 +24,16 @@ class PlayerController : IPlayerController {
     private val player = MediaPlayer()     //媒体对象
     private lateinit var mCacheProxy: ICacheProxy
     private val mPlayingInfoManager = PlayingInfoManager()
+    private val service = RetrofitManager.getService(BaseService::class.java)
+
+    /**
+     * 默认[Dispatchers.IO]
+     */
+    private val ioApplicationScope by lazy {
+        CoroutineScope(SupervisorJob() + Dispatchers.IO + CoroutineExceptionHandler { _, throwable ->
+            AppLog.e("IOApplicationScope:\n${throwable.message.toString()}", throwable = throwable)
+        })
+    }
 
     private var mIsPaused = true
     private var mIsChangingPlayingMusic = false
@@ -35,9 +50,13 @@ class PlayerController : IPlayerController {
                     playNext()
                 }
             }
-            setOnErrorListener { mp, what, extra -> true }
+            setOnErrorListener { mp, what, extra ->
+
+                true
+            }
             setOnInfoListener { mp, what, extra -> true }
             setOnPreparedListener {
+                AppLog.d(TAG, "---------->start")
                 mIsChangingPlayingMusic = false
                 start()
             }
@@ -71,10 +90,9 @@ class PlayerController : IPlayerController {
     override fun playAudio() {
         if (mIsChangingPlayingMusic) {
             runCatching {
-                player.stop()
+//                player.stop()
                 player.reset()
-                player.setDataSource(mCacheProxy.getCacheUrl(getUrl()))
-                player.prepareAsync()
+                getUrlAndPlay()
             }.onFailure {
                 AppLog.d(TAG, "playAudio：播放失败")
                 it.printStackTrace()
@@ -84,7 +102,15 @@ class PlayerController : IPlayerController {
         }
     }
 
-    private fun getUrl(): String {
+    private fun getUrlAndPlay(): String {
+        ioApplicationScope.launch {
+            val songId = mPlayingInfoManager.getCurrentSongId().toString()
+            val urlData = service.getSongUrlById(songId).getOrElse { SongUrlData() }
+            val cacheUrl = mCacheProxy.getCacheUrl(urlData[0].url)
+            AppLog.d(TAG, cacheUrl)
+            player.setDataSource(urlData[0].url)
+            player.prepareAsync()
+        }
         return ""
     }
 

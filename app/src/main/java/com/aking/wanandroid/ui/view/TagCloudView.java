@@ -26,7 +26,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Point;
-import android.graphics.Rect;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
@@ -39,7 +38,6 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 
-import com.aking.wanandroid.util.CommonKt;
 import com.moxun.tagcloudlib.R;
 
 import java.lang.annotation.Retention;
@@ -71,6 +69,7 @@ public class TagCloudView extends ViewGroup implements Runnable, TagsAdapter.OnD
     private View contentView = null;
     private int mContentWidth;
     private int mContentHeight;
+    private float elevation = 8;
 
     public TagCloudView(Context context) {
         super(context);
@@ -292,6 +291,7 @@ public class TagCloudView extends ViewGroup implements Runnable, TagsAdapter.OnD
                 int left = (getMeasuredWidth() - mContentWidth) / 2;
                 int top = (getMeasuredHeight() - mContentHeight) / 2;
                 contentView.layout(left, top, left + mContentWidth, top + mContentHeight);
+                contentView.setElevation(elevation);
                 continue;
             }
             View child = getChildAt(i);
@@ -300,6 +300,7 @@ public class TagCloudView extends ViewGroup implements Runnable, TagsAdapter.OnD
                 tagsAdapter.onThemeColorChanged(child, tag.getColor());
                 child.setScaleX(tag.getScale());
                 child.setScaleY(tag.getScale());
+                child.setElevation(tag.getScale() * elevation);
                 int left, top;
                 left = (int) (centerX + tag.getLoc2DX()) - child.getMeasuredWidth() / 2;
                 top = (int) (centerY + tag.getLoc2DY()) - child.getMeasuredHeight() / 2;
@@ -404,7 +405,7 @@ public class TagCloudView extends ViewGroup implements Runnable, TagsAdapter.OnD
             processTouch();
         }
 
-        handler.postDelayed(this, 50);
+        handler.postDelayed(this, 12);
     }
 
     public void setOnTagClickListener(OnTagClickListener listener) {

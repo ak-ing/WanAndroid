@@ -83,6 +83,11 @@ class PlayingInfoManager {
     }
 
     /**
+     * 获取当前歌曲Id
+     */
+    fun getCurrentSongId() =getPlayingList()[mPlayIndex].id
+
+    /**
      * 获取播放列表
      */
     fun getPlayingList() = if (mRepeatMode == RepeatMode.RANDOM) {

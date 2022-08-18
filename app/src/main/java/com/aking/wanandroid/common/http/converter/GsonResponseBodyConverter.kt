@@ -27,7 +27,7 @@ class GsonResponseBodyConverter<T : Any>(
                 when (jsonReader.nextName()) {
                     "code" -> errorCode = jsonReader.nextInt()
                     "message" -> errorMsg = jsonReader.nextString()
-                    "result","data" -> data = adapter.read(jsonReader)
+                    "result","data","cookie" -> data = adapter.read(jsonReader)
                     else -> jsonReader.skipValue()
                 }
             }

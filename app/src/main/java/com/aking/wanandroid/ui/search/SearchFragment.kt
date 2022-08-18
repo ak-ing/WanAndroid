@@ -6,6 +6,7 @@ import androidx.fragment.app.viewModels
 import com.aking.wanandroid.R
 import com.aking.wanandroid.app.base.VDBaseFragment
 import com.aking.wanandroid.databinding.FragmentSearchBinding
+import com.aking.wanandroid.player.PlayerManager
 import com.aking.wanandroid.ui.search.helper.HotKeyAdapter
 import com.aking.wanandroid.util.AppLog
 import com.aking.wanandroid.util.TAG
@@ -27,6 +28,12 @@ class SearchFragment : VDBaseFragment<FragmentSearchBinding>(R.layout.fragment_s
             AppLog.d(TAG, it.hots.toString())
             tagAdapter.submitList(it.hots)
         }
+
+        vm.dailyLiveData.observe(viewLifecycleOwner) {
+            AppLog.d(TAG, it.toString())
+            PlayerManager.loadSongs(it.dailySongs, 0)
+        }
+
     }
 
 }
