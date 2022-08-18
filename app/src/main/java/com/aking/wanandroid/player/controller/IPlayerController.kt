@@ -87,11 +87,6 @@ interface IPlayerController {
     fun isPaused(): Boolean
 
     /**
-     * 是否已经初始化
-     */
-    fun isInit(): Boolean
-
-    /**
      * 设置进度
      */
     fun setSeek(progress: Int)

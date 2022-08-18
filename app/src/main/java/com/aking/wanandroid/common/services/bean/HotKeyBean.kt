@@ -11,7 +11,5 @@ data class HotKeyBean(
 
 data class Hot(
     val first: String,
-    val iconType: Int,
-    val second: Int,
-    val third: Any
+    val iconType: Int
 )

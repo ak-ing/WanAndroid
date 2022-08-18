@@ -32,73 +32,37 @@ object PlayerManager : IPlayerController {
         mController.setCacheProxy(cacheProxy)
     }
 
-    override fun loadSongs(songs: List<BaseSong>) {
-        TODO("Not yet implemented")
-    }
+    override fun loadSongs(songs: List<BaseSong>) = mController.loadSongs(songs)
 
-    override fun loadSongs(songs: List<BaseSong>, playIndex: Int) {
-        TODO("Not yet implemented")
-    }
+    override fun loadSongs(songs: List<BaseSong>, playIndex: Int) = mController.loadSongs(songs, playIndex)
 
-    override fun playAudio() {
-        TODO("Not yet implemented")
-    }
+    override fun playAudio() = mController.playAudio()
 
-    override fun playAudio(index: Int) {
-        TODO("Not yet implemented")
-    }
+    override fun playAudio(index: Int) = mController.playAudio(index)
 
-    override fun playNext() {
-        TODO("Not yet implemented")
-    }
+    override fun playNext() = mController.playNext()
 
-    override fun playPrevious() {
-        TODO("Not yet implemented")
-    }
+    override fun playPrevious() = mController.playPrevious()
 
-    override fun playAgain() {
-        TODO("Not yet implemented")
-    }
+    override fun playAgain() = mController.playAgain()
 
-    override fun togglePlay() {
-        TODO("Not yet implemented")
-    }
+    override fun togglePlay() = mController.togglePlay()
 
-    override fun pauseAudio() {
-        TODO("Not yet implemented")
-    }
+    override fun pauseAudio() = mController.pauseAudio()
 
-    override fun resumeAudio() {
-        TODO("Not yet implemented")
-    }
+    override fun resumeAudio() = mController.resumeAudio()
 
-    override fun clear() {
-        TODO("Not yet implemented")
-    }
+    override fun clear() = mController.clear()
 
-    override fun changeMode() {
-        TODO("Not yet implemented")
-    }
+    override fun changeMode() = mController.changeMode()
 
-    override fun isPlaying(): Boolean {
-        TODO("Not yet implemented")
-    }
+    override fun isPlaying(): Boolean = mController.isPlaying()
 
-    override fun isPaused(): Boolean {
-        TODO("Not yet implemented")
-    }
+    override fun isPaused(): Boolean = mController.isPaused()
 
-    override fun isInit(): Boolean {
-        TODO("Not yet implemented")
-    }
+    override fun setSeek(progress: Int) = mController.setSeek(progress)
 
-    override fun setSeek(progress: Int) {
-        TODO("Not yet implemented")
-    }
-
-    override fun getTrackTime(progress: Int): String? {
-        TODO("Not yet implemented")
-    }
+    override fun getTrackTime(progress: Int): String = mController.getTrackTime(progress)
 
 
 }

@@ -12,16 +12,17 @@ import androidx.databinding.ViewDataBinding
  * God bless my code!
  * @Description: DataBinding基类Fragment
  */
-open class VDBaseFragment(@LayoutRes private val layoutResId: Int) : BaseFragment() {
+abstract class VDBaseFragment<VB : ViewDataBinding>(@LayoutRes private val layoutResId: Int) :
+    BaseFragment() {
 
-    private var _vdb: ViewDataBinding? = null
-    protected val vdb get() = _vdb
+    private var _vdb: VB? = null
+    protected val vdb: VB get() = _vdb!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ) = DataBindingUtil.inflate<ViewDataBinding>(inflater, layoutResId, container, false)
+    ) = DataBindingUtil.inflate<VB>(inflater, layoutResId, container, false)
         .also {
             it.lifecycleOwner = viewLifecycleOwner
             _vdb = it

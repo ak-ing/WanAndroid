@@ -63,4 +63,6 @@ dependencies {
     implementation 'com.squareup.okhttp3:logging-interceptor:4.10.0-RC1'
     //AndroidVideoCache
     implementation 'com.danikula:videocache:2.7.1'
+    //3dTagCloudAndroid
+    implementation 'com.moxun:tagcloudlib:1.2.0'
 }

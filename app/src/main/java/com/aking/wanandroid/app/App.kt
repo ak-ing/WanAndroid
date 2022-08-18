@@ -3,7 +3,7 @@ package com.aking.wanandroid.app
 import android.app.Application
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
-import com.google.android.material.color.DynamicColors
+import com.aking.wanandroid.player.PlayerManager
 
 /**
  * Created by AK on 2022/8/14 22:15.
@@ -25,6 +25,7 @@ class App : Application(), ViewModelStoreOwner {
     override fun onCreate() {
         super.onCreate()
         sApp = this
+        PlayerManager.init(this)
 //        DynamicColors.applyToActivitiesIfAvailable(this)
     }
 
