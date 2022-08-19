@@ -10,6 +10,6 @@ import android.util.TypedValue
  */
 
 /**
- * 单位dp
+ * dp单位
  */
 val Number.dp get() = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this.toFloat(), Resources.getSystem().displayMetrics)
