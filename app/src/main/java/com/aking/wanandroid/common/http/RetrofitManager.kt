@@ -3,7 +3,7 @@ package com.aking.wanandroid.common.http
 import com.aking.wanandroid.common.http.adapter.ErrorHandler
 import com.aking.wanandroid.common.http.adapter.NetworkResponseAdapterFactory
 import com.aking.wanandroid.common.http.converter.GsonConverterFactory
-import com.aking.wanandroid.common.services.BaseService
+import com.aking.wanandroid.app.base.BaseService
 import com.aking.wanandroid.util.AppLog
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

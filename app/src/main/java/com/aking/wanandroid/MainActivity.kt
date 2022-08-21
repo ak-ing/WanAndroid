@@ -39,5 +39,4 @@ class MainActivity : VDBaseActivity() {
         // TODO: 双击回到顶部
     }
 
-
 }

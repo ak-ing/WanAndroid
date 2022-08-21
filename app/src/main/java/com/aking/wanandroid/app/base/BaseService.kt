@@ -1,4 +1,4 @@
-package com.aking.wanandroid.common.services
+package com.aking.wanandroid.app.base
 
 import com.aking.wanandroid.common.http.adapter.NetworkResponse
 import com.aking.wanandroid.common.services.bean.SongUrlData
@@ -17,7 +17,16 @@ interface BaseService {
         const val DEFAULT_PAGE_START_NO_1 = 1
     }
 
+    /**
+     * 获取歌曲Url
+     */
     @GET("/song/url")
     suspend fun getSongUrlById(@Query("id") ids: String): NetworkResponse<SongUrlData>
+
+    /**
+     * 匿名登录
+     */
+    @GET("/register/anonimous")
+    suspend fun registerByAnonymous(): NetworkResponse<String>
 
 }

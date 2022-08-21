@@ -9,6 +9,9 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="bg_color_dialog">#121212</color>
+    <color name="color_navigation">#1d1d1d</color>
+    <color name="color_content_bg1">#181818</color>
+    <color name="color_content_bg2">#282828</color>
 
     <color name="launcher_background_color">@android:color/white</color>
     <color name="launcher_foreground_android_color">#1f5a89</color>

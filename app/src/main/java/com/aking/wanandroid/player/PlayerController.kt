@@ -3,16 +3,18 @@ package com.aking.wanandroid.player
 import android.content.Context
 import android.media.MediaPlayer
 import androidx.lifecycle.MutableLiveData
+import com.aking.wanandroid.app.App
 import com.aking.wanandroid.common.http.RetrofitManager
 import com.aking.wanandroid.common.http.adapter.getOrElse
-import com.aking.wanandroid.common.services.BaseService
+import com.aking.wanandroid.app.base.BaseService
 import com.aking.wanandroid.common.services.bean.SongUrlData
 import com.aking.wanandroid.player.bean.BaseSong
 import com.aking.wanandroid.player.controller.ICacheProxy
 import com.aking.wanandroid.player.controller.IPlayerController
 import com.aking.wanandroid.util.AppLog
 import com.aking.wanandroid.util.TAG
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 /**
  * Created by Rick on 2022-08-17  15:33.
@@ -25,15 +27,6 @@ class PlayerController : IPlayerController {
     private lateinit var mCacheProxy: ICacheProxy
     private val mPlayingInfoManager = PlayingInfoManager()
     private val service = RetrofitManager.getService(BaseService::class.java)
-
-    /**
-     * 默认[Dispatchers.IO]
-     */
-    private val ioApplicationScope by lazy {
-        CoroutineScope(SupervisorJob() + Dispatchers.IO + CoroutineExceptionHandler { _, throwable ->
-            AppLog.e("IOApplicationScope:\n${throwable.message.toString()}", throwable = throwable)
-        })
-    }
 
     private var mIsPaused = true
     private var mIsChangingPlayingMusic = false
@@ -77,6 +70,9 @@ class PlayerController : IPlayerController {
     override fun loadSongs(songs: List<BaseSong>, playIndex: Int) {
         setSongs(songs, playIndex)
         mIsChangingPlayingMusic = true
+        if (player.isPlaying) {
+            player.stop()
+        }
         playAudio()
     }
 
@@ -87,16 +83,18 @@ class PlayerController : IPlayerController {
 
     override fun playAudio() {
         if (mIsChangingPlayingMusic) {
-            ioApplicationScope.launch(Dispatchers.IO) {
+            App.instance().ioApplicationScope.launch(Dispatchers.IO) {
                 runCatching {
                     player.reset()
                     player.setDataSource(mCacheProxy.getCacheUrl(getSongUrl()))
                     player.prepare()
-                    mIsChangingPlayingMusic = false
-                    player.start()
                 }.onFailure {
+                    mIsChangingPlayingMusic = false
                     AppLog.d(TAG, "playAudio：播放失败")
                     it.printStackTrace()
+                }.onSuccess {
+                    mIsChangingPlayingMusic = false
+                    player.start()
                 }
             }
         } else if (mIsPaused) {

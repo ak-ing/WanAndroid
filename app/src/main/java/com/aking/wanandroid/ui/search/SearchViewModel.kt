@@ -3,11 +3,12 @@ package com.aking.wanandroid.ui.search
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import androidx.lifecycle.viewModelScope
+import com.aking.wanandroid.app.App
 import com.aking.wanandroid.common.http.adapter.getOrElse
 import com.aking.wanandroid.common.services.bean.HotKeyBean
 import com.aking.wanandroid.common.services.bean.RecommendSongData
-import kotlinx.coroutines.launch
+import com.aking.wanandroid.util.AppLog
+import com.aking.wanandroid.util.TAG
 
 /**
  * Created by Rick on 2022-08-16  15:54.
@@ -19,12 +20,14 @@ class SearchViewModel : ViewModel() {
     private val repository = SearchRepository()
 
     val hotKeyLiveData: LiveData<HotKeyBean> = liveData {
+        AppLog.d(TAG, "------>hotKeyLiveData")
         emit(repository.getHotKeyList().getOrElse { HotKeyBean(emptyList()) })
     }
 
-    val dailyLiveData:LiveData<RecommendSongData> = liveData {
-        val anonymous = repository.service2.registerByAnonymous()
-        emit(repository.service2.getDailyRecommendSongs(anonymous.getOrElse { "aaaaaa-----" }).getOrElse { RecommendSongData(emptyList(), emptyList()) })
+    val dailyLiveData: LiveData<RecommendSongData> = liveData {
+        AppLog.d(TAG, "------>dailyLiveData ")
+        emit(repository.getDailyRecommendSongs(App.instance().getCookie(repository.getService()))
+            .getOrElse { RecommendSongData(emptyList(), emptyList()) })
     }
 
 }
