@@ -1,16 +1,32 @@
 <resources>
-    <!-- Base application theme. -->
-    <style name="Theme.WanAndroid" parent="Theme.Material3.Dark.NoActionBar">
-        <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_200</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+
+    <!--Final, top-level theme-->
+    <style name="Theme.Music.DayNight" parent="Theme.Music.Dark" />
+
+    <style name="Theme.Music.Dark" parent="Theme.Music">
+        <!--Color-->
+        <item name="colorPrimary">@color/music_blue_200</item>
+        <item name="colorPrimaryVariant">@color/music_blue_300</item>
+        <item name="colorSecondary">@color/music_orange_300</item>
+        <item name="colorSecondaryVariant">@color/music_orange_300</item>
+
+        <item name="android:colorBackground">@color/music_black_900</item>
+        <item name="colorSurface">@color/music_black_800</item>
+        <item name="colorPrimarySurfaceVariant">?attr/colorSurface</item>
+        <item name="colorError">@color/music_red_200</item>
+
+        <item name="colorOnPrimary">@color/music_black_900</item>
+        <item name="colorOnSecondary">@color/music_black_900</item>
+        <item name="colorOnBackground">@color/music_white_50</item>
+        <item name="colorOnSurface">@color/music_white_50</item>
+        <item name="colorOnError">@color/music_black_900</item>
+
+        <item name="scrimBackground">@color/music_black_900_alpha_087</item>
+        <item name="android:statusBarColor">@color/music_black_900_alpha_060</item>
+
+        <item name="elevationOverlayEnabled">true</item>
+
+        <!--System/Platform attributes-->
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources>

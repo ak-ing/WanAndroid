@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--theme colors-->
+    <color name="owl_yellow_200">#ffeb46</color>
+    <color name="owl_yellow_400">#ffc000</color>
+    <color name="owl_yellow_500">#ffde03</color>
+    <color name="owl_yellow_dark_primary">#242316</color>
+
+    <color name="owl_blue_200">#91a4fc</color>
+    <color name="owl_blue_700">#0336ff</color>
+    <color name="owl_blue_800">#0035c9</color>
+    <color name="owl_blue_dark_primary">#1c1d24</color>
+
+    <!--Color palette-->
+    <color name="music_white_50">#ffffff</color>
+
+    <color name="music_black_800">#121212</color>
+    <color name="music_black_900">#000000</color>
+
+    <color name="music_blue_50">#eef0f2</color>
+    <color name="music_blue_100">#d2dbe0</color>
+    <color name="music_blue_200">#adbbc4</color>
+    <color name="music_blue_300">#8ca2ae</color>
+    <color name="music_blue_600">#4a6572</color>
+    <color name="music_blue_700">#344955</color>
+    <color name="music_blue_800">#232f34</color>
+
+    <color name="music_orange_300">#fbd790</color>
+    <color name="music_orange_400">#f9be64</color>
+    <color name="music_orange_500">#f9aa33</color>
+
+    <color name="music_red_200">#cf7779</color>
+    <color name="music_red_400">#ff4c5d</color>
+
+    <color name="music_white_50_alpha_060">#99ffffff</color>
+
+    <color name="music_blue_50_alpha_060">#99eef0f2</color>
+
+    <color name="music_black_900_alpha_020">#33000000</color>
+    <color name="music_black_900_alpha_087">#de000000</color>
+    <color name="music_black_900_alpha_060">#99000000</color>
+
+    <!--Nav bar color protection for behavior differences between Android P and Q. All sdk-->
+    <!--levels should draw fullscreen. P should color the nav bar with a translucent background -->
+    <!--to guard for contrast. Q should have a transparent nav bar as Q will automatically -->
+    <!--handles contrast by either dynamically coloring the nav bar handle (gesture nav) -->
+    <!--or automatically applying a translucent background (3-button mode).-->
+    <color name="nav_bar">@color/music_black_900_alpha_020</color>
+
+</resources>

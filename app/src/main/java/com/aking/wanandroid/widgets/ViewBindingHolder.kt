@@ -1,4 +1,4 @@
-package com.aking.wanandroid.common.vdb
+package com.aking.wanandroid.widgets
 
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.RecyclerView

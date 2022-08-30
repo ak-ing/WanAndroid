@@ -1,114 +1,69 @@
 <resources>
-    <!-- Base application theme. -->
-    <style name="Theme.WanAndroid" parent="Theme.Material3.Dark.NoActionBar">
-        <item name="android:statusBarColor">@android:color/transparent</item>
-<!--        <item name="android:windowBackground">@color/black</item>-->
-        <!--ripper-->
-<!--                <item name="colorPrimary">@color/white</item>-->
 
-<!--        <item name="colorOnSecondaryContainer">@color/white</item>-->
-<!--        <item name="colorOnSurfaceVariant">@color/white</item>-->
-<!--        <item name="colorOnSurface">@color/white</item>-->
-<!--        <item name="colorSecondaryContainer">@color/m3_sys_color_dark_surface_variant</item>-->
-<!--        <item name="colorSurface">@android:color/transparent</item>-->
-    </style>
+    <!--Final, top-level theme-->
+    <style name="Theme.Music.DayNight" parent="Theme.Music" />
 
+    <style name="Theme.Music" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
+        <!--Color-->
+        <item name="colorPrimary">@color/music_blue_700</item>
+        <item name="colorPrimaryVariant">@color/music_blue_800</item>
+        <item name="colorSecondary">@color/music_orange_500</item>
+        <item name="colorSecondaryVariant">@color/music_orange_400</item>
 
-    <style name="aa">
+        <item name="android:colorBackground">@color/music_blue_50</item>
+        <item name="colorSurface">@color/music_white_50</item>
+        <item name="colorPrimarySurfaceVariant">?attr/colorPrimaryVariant</item>
+        <item name="colorError">@color/music_red_400</item>
 
-        <item name="android:background">?attr/colorSurface</item>
-        <item name="backgroundTint">@null</item>
-        <item name="elevation">@dimen/m3_sys_elevation_level2</item>
-        <item name="itemActiveIndicatorStyle">@style/Widget.Material3.BottomNavigationView.ActiveIndicator</item>
-        <item name="itemTextAppearanceInactive">?attr/textAppearanceTitleSmall</item>
-        <item name="itemTextAppearanceActive">?attr/textAppearanceTitleSmall</item>
-        <item name="itemRippleColor">@color/m3_navigation_bar_ripple_color_selector</item>
-        <item name="itemIconTint">@color/m3_navigation_bar_item_with_indicator_icon_tint</item>
-        <item name="itemTextColor">@color/m3_navigation_bar_item_with_indicator_label_tint</item>
-        <item name="itemPaddingTop">@dimen/m3_bottom_nav_item_padding_top</item>
-        <item name="itemPaddingBottom">@dimen/m3_bottom_nav_item_padding_bottom</item>
-        <item name="android:minHeight">@dimen/m3_bottom_nav_min_height</item>
+        <item name="colorOnPrimary">@color/music_white_50</item>
+        <item name="colorOnSecondary">@color/music_black_900</item>
+        <item name="colorOnBackground">@color/music_black_900</item>
+        <item name="colorOnSurface">@color/music_black_900</item>
+        <item name="colorOnError">@color/music_black_900</item>
 
-        <!-- Color palettes -->
-        <item name="colorPrimary">@color/m3_sys_color_dark_primary</item>
-        <item name="colorOnPrimary">@color/m3_sys_color_dark_on_primary</item>
-        <item name="colorPrimaryInverse">@color/m3_sys_color_dark_inverse_primary</item>
-        <item name="colorPrimaryContainer">@color/m3_sys_color_dark_primary_container</item>
-        <item name="colorOnPrimaryContainer">@color/m3_sys_color_dark_on_primary_container</item>
-        <item name="colorSecondary">@color/m3_sys_color_dark_secondary</item>
-        <item name="colorOnSecondary">@color/m3_sys_color_dark_on_secondary</item>
-        <item name="colorSecondaryContainer">@color/m3_sys_color_dark_secondary_container</item>
-        <item name="colorOnSecondaryContainer">@color/m3_sys_color_dark_on_secondary_container</item>
-        <item name="colorTertiary">@color/m3_sys_color_dark_tertiary</item>
-        <item name="colorOnTertiary">@color/m3_sys_color_dark_on_tertiary</item>
-        <item name="colorTertiaryContainer">@color/m3_sys_color_dark_tertiary_container</item>
-        <item name="colorOnTertiaryContainer">@color/m3_sys_color_dark_on_tertiary_container</item>
-        <item name="android:colorBackground">@color/m3_sys_color_dark_background</item>
-        <item name="colorOnBackground">@color/m3_sys_color_dark_on_background</item>
-        <item name="colorSurface">@color/m3_sys_color_dark_surface</item>
-        <item name="colorOnSurface">@color/m3_sys_color_dark_on_surface</item>
-        <item name="colorSurfaceVariant">@color/m3_sys_color_dark_surface_variant</item>
-        <item name="colorOnSurfaceVariant">@color/m3_sys_color_dark_on_surface_variant</item>
-        <item name="colorSurfaceInverse">@color/m3_sys_color_dark_inverse_surface</item>
-        <item name="colorOnSurfaceInverse">@color/m3_sys_color_dark_inverse_on_surface</item>
-        <item name="colorOutline">@color/m3_sys_color_dark_outline</item>
-        <item name="colorError">@color/m3_sys_color_dark_error</item>
-        <item name="colorOnError">@color/m3_sys_color_dark_on_error</item>
-        <item name="colorErrorContainer">@color/m3_sys_color_dark_error_container</item>
-        <item name="colorOnErrorContainer">@color/m3_sys_color_dark_on_error_container</item>
+        <!--Platform attributes-->
+        <item name="scrimBackground">@color/music_white_50_alpha_060</item>
+        <item name="android:statusBarColor">@color/music_blue_50_alpha_060</item>
+        <item name="android:navigationBarColor">@color/nav_bar</item>
 
-        <!-- Framework Colors. -->
-        <item name="android:windowBackground">?android:attr/colorBackground</item>
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Music.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Music.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Music.LargeComponent</item>
 
-        <!-- Default Framework Text Colors. -->
-        <item name="android:textColorPrimary">@color/m3_dark_default_color_primary_text</item>
-        <item name="android:textColorPrimaryInverse">@color/m3_default_color_primary_text</item>
-        <item name="android:textColorSecondary">@color/m3_dark_default_color_secondary_text</item>
-        <item name="android:textColorSecondaryInverse">@color/m3_default_color_secondary_text</item>
-        <item name="android:textColorTertiary">@color/m3_dark_default_color_secondary_text</item>
-        <item name="android:textColorTertiaryInverse">@color/m3_default_color_secondary_text</item>
-        <item name="android:textColorPrimaryDisableOnly">@color/m3_dark_primary_text_disable_only</item>
-        <item name="android:textColorPrimaryInverseDisableOnly">@color/m3_primary_text_disable_only</item>
-        <item name="android:textColorHint">@color/m3_dark_hint_foreground</item>
-        <item name="android:textColorHintInverse">@color/m3_hint_foreground</item>
-        <item name="android:textColorHighlight">@color/m3_dark_highlighted_text</item>
-        <item name="android:textColorHighlightInverse">@color/m3_highlighted_text</item>
-        <item name="android:textColorLink">?attr/colorPrimary</item>
-        <item name="android:textColorLinkInverse">?attr/colorPrimaryInverse</item>
-        <item name="android:textColorAlertDialogListItem">@color/m3_dark_default_color_primary_text</item>
-    </style>
+        <!--Typography-->
+        <item name="textAppearanceHeadline2">@style/TextAppearance.Reply.Headline2</item>
+        <item name="textAppearanceHeadline3">@style/TextAppearance.Reply.Headline3</item>
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Reply.Headline4</item>
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Reply.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Reply.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Reply.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Reply.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Reply.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Reply.Body2</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Reply.Button</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Reply.Caption</item>
+        <item name="textAppearanceOverline">@style/TextAppearance.Reply.Overline</item>
 
-    <style name="AppTheme" parent="Theme.Material3.Light.NoActionBar">
-        <item name="colorPrimary">@color/md_theme_primary</item>
-        <item name="colorOnPrimary">@color/md_theme_on_primary</item>
-        <item name="colorPrimaryContainer">@color/md_theme_primary_container</item>
-        <item name="colorOnPrimaryContainer">@color/md_theme_on_primary_container</item>
-        <item name="colorSecondary">@color/md_theme_secondary</item>
-        <item name="colorOnSecondary">@color/md_theme_on_secondary</item>
-        <item name="colorSecondaryContainer">@color/md_theme_secondary_container</item>
-        <item name="colorOnSecondaryContainer">@color/md_theme_on_secondary_container</item>
-        <item name="colorTertiary">@color/md_theme_tertiary</item>
-        <item name="colorOnTertiary">@color/md_theme_on_tertiary</item>
-        <item name="colorTertiaryContainer">@color/md_theme_tertiary_container</item>
-        <item name="colorOnTertiaryContainer">@color/md_theme_on_tertiary_container</item>
-        <item name="colorError">@color/md_theme_error</item>
-        <item name="colorErrorContainer">@color/md_theme_error_container</item>
-        <item name="colorOnError">@color/md_theme_on_error</item>
-        <item name="colorOnErrorContainer">@color/md_theme_on_error_container</item>
-        <item name="colorOnBackground">@color/md_theme_on_background</item>
-        <item name="colorSurface">@color/md_theme_surface</item>
-        <item name="colorOnSurface">@color/md_theme_on_surface</item>
-        <item name="colorSurfaceVariant">@color/md_theme_surface_variant</item>
-        <item name="colorOnSurfaceVariant">@color/md_theme_on_surface_variant</item>
-        <item name="colorOutline">@color/md_theme_outline</item>
-        <item name="colorSurfaceInverse">@color/md_theme_inverse_surface</item>
-        <item name="colorOnSurfaceInverse">@color/md_theme_inverse_on_surface</item>
-        <item name="colorPrimaryInverse">@color/md_theme_inverse_primary</item>
-        <item name="colorBackgroundFloating">@color/md_theme_background</item>
+        <item name="emphasisHighAlpha">0.87</item>
+        <item name="emphasisMediumAlpha">0.60</item>
+        <item name="emphasisDisabledAlpha">0.38</item>
 
-        <item name="android:colorBackground">?colorSurface</item>
-        <item name="android:statusBarColor">?colorSurface</item>
+        <item name="motionInterpolatorPersistent">@android:interpolator/fast_out_slow_in</item>
+        <item name="motionInterpolatorIncoming">@android:interpolator/decelerate_cubic</item>
+        <item name="motionInterpolatorOutgoing">@android:interpolator/accelerate_cubic</item>
+
+        <!--Styles-->
+        <item name="bottomNavigationStyle">
+            @style/Widget.MaterialComponents.BottomNavigationView.PrimarySurface
+        </item>
+        <item name="bottomAppBarStyle">@style/Widget.MaterialComponents.BottomAppBar.PrimarySurface</item>
+        <item name="bottomSheetStyle">@style/Widget.MaterialComponents.BottomSheet.Modal</item>
+        <item name="navigationViewStyle">@style/Widget.Reply.NavigationView</item>
+        <item name="chipStyle">@style/Widget.Reply.Chip.Entry</item>
+
+        <!--System/Platform attributes-->
+        <item name="android:windowBackground">?android:colorBackground</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
 

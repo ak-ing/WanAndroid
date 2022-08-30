@@ -1,4 +1,4 @@
-package com.aking.wanandroid.common.helper
+package com.aking.wanandroid.widgets
 
 import android.os.SystemClock
 import android.view.MenuItem

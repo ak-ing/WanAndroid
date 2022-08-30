@@ -4,4 +4,5 @@
     <string name="title_playlist">列表</string>
     <string name="title_search">搜索</string>
     <string name="title_profile">我的</string>
+    <string name="text_anonymous_login">游客登陆：欢迎您</string>
 </resources>

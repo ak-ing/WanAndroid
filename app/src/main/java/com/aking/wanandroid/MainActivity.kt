@@ -6,8 +6,8 @@ import androidx.activity.viewModels
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.aking.wanandroid.app.base.VDBaseActivity
-import com.aking.wanandroid.common.helper.NavBottomViewDoubleClickListener
-import com.aking.wanandroid.common.vdb.ActivityDataBindingDelegate
+import com.aking.wanandroid.widgets.NavBottomViewDoubleClickListener
+import com.aking.wanandroid.widgets.ActivityDataBindingDelegate
 import com.aking.wanandroid.databinding.ActivityMainBinding
 import com.aking.wanandroid.util.getPrimaryColor
 
