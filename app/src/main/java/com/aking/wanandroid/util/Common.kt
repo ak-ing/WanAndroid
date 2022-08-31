@@ -34,11 +34,3 @@ val Any.TAG get() = this::class.java.simpleName + ":" + Integer.toHexString(hash
 val Number.dp get() = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, this.toFloat(), Resources.getSystem().displayMetrics)
 
 
-/**
- * 获取Primary Color
- */
-fun Context.getPrimaryColor() = MaterialColors.getColor(
-    this,
-    com.google.android.material.R.attr.colorPrimary,
-    getColor(R.color.music_orange_500)
-)
