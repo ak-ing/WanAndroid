@@ -18,5 +18,5 @@ class SearchRepository : BaseRepository {
 
     suspend fun getHotKeyList() = service.getSearchHotKey()
 
-    suspend fun getDailyRecommendSongs(cookie: String) = service.getDailyRecommendSongs(cookie)
+    suspend fun getDailyRecommendSongs() = service.getDailyRecommendSongs()
 }

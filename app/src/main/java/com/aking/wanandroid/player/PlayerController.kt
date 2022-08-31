@@ -83,7 +83,7 @@ class PlayerController : IPlayerController {
 
     override fun playAudio() {
         if (mIsChangingPlayingMusic) {
-            App.instance().ioApplicationScope.launch(Dispatchers.IO) {
+            App.get().ioApplicationScope.launch(Dispatchers.IO) {
                 runCatching {
                     player.reset()
                     player.setDataSource(mCacheProxy.getCacheUrl(getSongUrl()))

@@ -34,7 +34,8 @@ object RetrofitManager {
     private fun getOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             //添加公共heads
-            .addInterceptor(TokenInterceptor())
+            .addInterceptor(AddCookieInterceptor())
+            .addInterceptor(CookieInterceptor())
             // 日志拦截器
             .addInterceptor(logInterceptor)
             .connectionPool(ConnectionPool(8, 15, TimeUnit.SECONDS))

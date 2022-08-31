@@ -14,7 +14,7 @@ import com.aking.wanandroid.app.App
  * 显示短时间的Toast
  */
 fun String?.showShortToast() = takeIf { it.isNullOrBlank().not() }?.also {
-    Toast.makeText(App.instance(), it, Toast.LENGTH_SHORT).show()
+    Toast.makeText(App.get(), it, Toast.LENGTH_SHORT).show()
 }
 
 
@@ -22,14 +22,14 @@ fun String?.showShortToast() = takeIf { it.isNullOrBlank().not() }?.also {
  * 显示长时间的Toast
  */
 fun String?.showLongToast() = takeIf { it.isNullOrBlank().not() }?.also {
-    Toast.makeText(App.instance(), this, Toast.LENGTH_LONG).show()
+    Toast.makeText(App.get(), this, Toast.LENGTH_LONG).show()
 }
 
 /**
  * 居中显示短时间的Toast
  */
 fun String?.showShortToastInCenter() = takeIf { it.isNullOrBlank().not() }?.also {
-    Toast.makeText(App.instance(), this, Toast.LENGTH_SHORT).apply {
+    Toast.makeText(App.get(), this, Toast.LENGTH_SHORT).apply {
         setGravity(Gravity.CENTER, 0, 0)
         show()
     }
@@ -39,7 +39,7 @@ fun String?.showShortToastInCenter() = takeIf { it.isNullOrBlank().not() }?.also
  * 居中显示短时间的Toast
  */
 fun String?.showLongToastInCenter() = takeIf { it.isNullOrBlank().not() }?.also {
-    Toast.makeText(App.instance(), this, Toast.LENGTH_LONG).apply {
+    Toast.makeText(App.get(), this, Toast.LENGTH_LONG).apply {
         setGravity(Gravity.CENTER, 0, 0)
         show()
     }

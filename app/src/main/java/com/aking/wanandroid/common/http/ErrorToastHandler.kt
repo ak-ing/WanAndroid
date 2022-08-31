@@ -19,7 +19,7 @@ internal object ErrorToastHandler : ErrorHandler {
     private fun handle(throwable: Throwable): String =
         when (throwable) {
             is IOException -> {
-                if (NetWorkUtil.isNetworkAvailable(App.instance()).not()) {
+                if (NetWorkUtil.isNetworkAvailable(App.get()).not()) {
                     ERROR_NET_WORK_DISCONNECTED
                 } else handIoException(throwable)
             }

@@ -26,7 +26,8 @@ class SearchViewModel : ViewModel() {
 
     val dailyLiveData: LiveData<RecommendSongData> = liveData {
         AppLog.d(TAG, "------>dailyLiveData ")
-        emit(repository.getDailyRecommendSongs(App.instance().getCookie(repository.getService()))
+        repository.getService().registerByAnonymous()
+        emit(repository.getDailyRecommendSongs()
             .getOrElse { RecommendSongData(emptyList(), emptyList()) })
     }
 

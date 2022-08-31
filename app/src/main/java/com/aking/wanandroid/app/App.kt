@@ -9,6 +9,7 @@ import com.aking.wanandroid.common.http.adapter.getOrElse
 import com.aking.wanandroid.player.PlayerManager
 import com.aking.wanandroid.util.AppLog
 import com.aking.wanandroid.util.COOKIE_KEY
+import com.aking.wanandroid.util.TAG
 import com.aking.wanandroid.util.dataStore
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.map
@@ -23,7 +24,7 @@ class App : Application(), ViewModelStoreOwner {
         private lateinit var sApp: App
 
         @JvmStatic
-        fun instance() = sApp
+        fun get() = sApp
     }
 
     private val mAppViewModelStore = ViewModelStore()
@@ -58,7 +59,8 @@ class App : Application(), ViewModelStoreOwner {
             }.join()
             dataStore.edit { it[COOKIE_KEY] = mCookie }
         }
-        return mCookie
+        AppLog.d("---------------",mCookie)
+        return ""
     }
 
     override fun getViewModelStore() = mAppViewModelStore

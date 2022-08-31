@@ -9,7 +9,6 @@ import com.aking.wanandroid.app.base.VDBaseActivity
 import com.aking.wanandroid.widgets.NavBottomViewDoubleClickListener
 import com.aking.wanandroid.widgets.ActivityDataBindingDelegate
 import com.aking.wanandroid.databinding.ActivityMainBinding
-import com.aking.wanandroid.util.getPrimaryColor
 
 class MainActivity : VDBaseActivity() {
 
@@ -30,7 +29,7 @@ class MainActivity : VDBaseActivity() {
 
     private fun changeProfileDot(isShown: Boolean) {
         vdb.navView.getOrCreateBadge(R.id.navigation_profile).also { badge ->
-            badge.backgroundColor = getPrimaryColor()
+//            badge.backgroundColor = getPrimaryColor()
             badge.isVisible = isShown
         }
     }
