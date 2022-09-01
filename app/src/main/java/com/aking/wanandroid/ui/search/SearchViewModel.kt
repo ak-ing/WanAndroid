@@ -3,7 +3,6 @@ package com.aking.wanandroid.ui.search
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
-import com.aking.wanandroid.app.App
 import com.aking.wanandroid.common.http.adapter.getOrElse
 import com.aking.wanandroid.common.services.bean.HotKeyBean
 import com.aking.wanandroid.common.services.bean.RecommendSongData
@@ -26,7 +25,6 @@ class SearchViewModel : ViewModel() {
 
     val dailyLiveData: LiveData<RecommendSongData> = liveData {
         AppLog.d(TAG, "------>dailyLiveData ")
-        repository.getService().registerByAnonymous()
         emit(repository.getDailyRecommendSongs()
             .getOrElse { RecommendSongData(emptyList(), emptyList()) })
     }

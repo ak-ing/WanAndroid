@@ -3,21 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/navigation_search">
+    app:startDestination="@id/featured">
 
     <fragment
-        android:id="@+id/navigation_playlist"
+        android:id="@+id/playList"
         android:name="com.aking.wanandroid.ui.playlist.PlayListFragment"
         android:label="PlayListFragment"
         tools:layout="@layout/fragment_playlist" />
     <fragment
-        android:id="@+id/navigation_search"
+        android:id="@+id/featured"
+        android:name="com.aking.wanandroid.ui.featured.FeaturedFragment"
+        android:label="FeaturedFragment"
+        tools:layout="@layout/fragment_featured" />
+    <fragment
+        android:id="@+id/search"
         android:name="com.aking.wanandroid.ui.search.SearchFragment"
         android:label="SearchFragment"
         tools:layout="@layout/fragment_search" />
-    <fragment
-        android:id="@+id/navigation_profile"
-        android:name="com.aking.wanandroid.ui.profile.ProfileFragment"
-        android:label="ProfileFragment"
-        tools:layout="@layout/fragment_profile" />
 </navigation>

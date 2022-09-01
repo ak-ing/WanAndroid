@@ -1,5 +1,6 @@
 package com.aking.wanandroid.app.base
 
+import android.os.Bundle
 import androidx.databinding.ViewDataBinding
 
 /**
@@ -10,5 +11,10 @@ import androidx.databinding.ViewDataBinding
 abstract class VDBaseActivity : BaseActivity() {
 
     protected abstract val vdb: ViewDataBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        vdb
+    }
 
 }

@@ -3,7 +3,6 @@ package com.aking.wanandroid.common.http
 import com.aking.wanandroid.app.App
 import com.aking.wanandroid.common.http.adapter.ErrorHandler
 import com.aking.wanandroid.util.NetWorkUtil
-import com.aking.wanandroid.util.showShortToast
 import java.io.IOException
 import java.net.SocketTimeoutException
 
@@ -27,11 +26,10 @@ internal object ErrorToastHandler : ErrorHandler {
         }
 
     override fun bizError(code: Int, msg: String) {
-        msg.showShortToast()
+
     }
 
     override fun otherError(throwable: Throwable) {
-        handle(throwable).showShortToast()
     }
 
     private fun handIoException(ioException: IOException): String {

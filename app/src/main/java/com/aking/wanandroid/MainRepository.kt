@@ -12,7 +12,6 @@ class MainRepository : BaseRepository {
 
     private val service = RetrofitManager.getService(BaseService::class.java)
 
-    override fun getService(): BaseService = service
 
     /**
      * 匿名登录

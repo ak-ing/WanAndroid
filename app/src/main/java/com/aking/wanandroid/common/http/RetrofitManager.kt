@@ -23,7 +23,7 @@ object RetrofitManager {
     private val errorHandlers = mutableListOf<ErrorHandler>()
 
     private val logInterceptor by lazy {
-        HttpLoggingInterceptor { AppLog.d(msg = it) }.setLevel(if (AppLog.ISDEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.BASIC)
+        HttpLoggingInterceptor { }.setLevel(if (AppLog.ISDEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.BASIC)
     }
 
     fun addErrorHandlerListener(handler: ErrorHandler) {
@@ -34,8 +34,8 @@ object RetrofitManager {
     private fun getOkHttpClient(): OkHttpClient {
         return OkHttpClient.Builder()
             //添加公共heads
-            .addInterceptor(AddCookieInterceptor())
             .addInterceptor(CookieInterceptor())
+            .addInterceptor(AddCookieInterceptor())
             // 日志拦截器
             .addInterceptor(logInterceptor)
             .connectionPool(ConnectionPool(8, 15, TimeUnit.SECONDS))

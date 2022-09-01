@@ -16,27 +16,33 @@
 
 package com.aking.wanandroid.widgets
 
+import android.graphics.drawable.Drawable
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.updateLayoutParams
 import androidx.databinding.BindingAdapter
+import coil.load
+import coil.request.ImageRequest
+import coil.transform.CircleCropTransformation
 import com.google.android.material.elevation.ElevationOverlayProvider
 
-//@BindingAdapter("srcUrl", "circleCrop", "placeholder", "loadListener", requireAll = false)
-//fun ImageView.bindSrcUrl(
-//    url: String,
-//    circleCrop: Boolean,
-//    placeholder: Drawable?,
-//    loadListener: GlideDrawableLoadListener?
-//) {
-//    val request = Glide.with(this).load(url)
-//    if (circleCrop) request.circleCrop()
-//    if (placeholder != null) request.placeholder(placeholder)
-//    if (loadListener != null) request.listener(loadListener)
-//    request.into(this)
-//}
+@BindingAdapter("srcUrl", "circleCrop", "placeholder", "loadListener", requireAll = false)
+fun ImageView.bindSrcUrl(
+    url: String,
+    circleCrop: Boolean,
+    placeholder: Drawable?,
+    loadListener: ImageRequest.Listener?
+) {
+    load(url) {
+        crossfade(true)
+        if (circleCrop) transformations(CircleCropTransformation())
+        placeholder ?: placeholder(placeholder)
+        loadListener ?: listener(loadListener)
+    }
+}
 
 /**
  * Alter the background color as if this view had the given elevation. We don't want to actually

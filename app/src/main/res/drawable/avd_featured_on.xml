@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:drawable="@drawable/ic_explore_off">
+    <target
+        android:name="@drawable/ic_explore_on"
+       >
+        <aapt:attr name="android:animation">
+            <set android:ordering="together">
+                <objectAnimator android:propertyName="fillColor"
+                    android:duration="167"
+                    android:startOffset="0"
+                    android:valueFrom="#ffffff"
+                    android:valueTo="#ffde03"
+                    android:valueType="colorType">
+                </objectAnimator>
+            </set>
+        </aapt:attr>
+    </target>
+
+</animated-vector>

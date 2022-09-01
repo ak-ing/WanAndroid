@@ -23,13 +23,11 @@ package com.aking.wanandroid.ui.view;
  */
 
 import android.content.Context;
-import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.annotation.IntDef;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -38,7 +36,7 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 
-import com.moxun.tagcloudlib.R;
+import androidx.annotation.IntDef;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -90,24 +88,24 @@ public class TagCloudView extends ViewGroup implements Runnable, TagsAdapter.OnD
         setFocusableInTouchMode(true);
         mTagCloud = new TagCloud();
         if (attrs != null) {
-            TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TagCloudView);
+//            TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.TagCloudView);
+//
+//            String m = typedArray.getString(R.styleable.TagCloudView_autoScrollMode);
+//            mode = Integer.valueOf(m);
+//
+//            int light = typedArray.getColor(R.styleable.TagCloudView_lightColor, Color.WHITE);
+//            setLightColor(light);
+//
+//            int dark = typedArray.getColor(R.styleable.TagCloudView_darkColor, Color.BLACK);
+//            setDarkColor(dark);
+//
+//            float p = typedArray.getFloat(R.styleable.TagCloudView_radiusPercent, radiusPercent);
+//            setRadiusPercent(p);
+//
+//            float s = typedArray.getFloat(R.styleable.TagCloudView_scrollSpeed, 2f);
+//            setScrollSpeed(s);
 
-            String m = typedArray.getString(R.styleable.TagCloudView_autoScrollMode);
-            mode = Integer.valueOf(m);
-
-            int light = typedArray.getColor(R.styleable.TagCloudView_lightColor, Color.WHITE);
-            setLightColor(light);
-
-            int dark = typedArray.getColor(R.styleable.TagCloudView_darkColor, Color.BLACK);
-            setDarkColor(dark);
-
-            float p = typedArray.getFloat(R.styleable.TagCloudView_radiusPercent, radiusPercent);
-            setRadiusPercent(p);
-
-            float s = typedArray.getFloat(R.styleable.TagCloudView_scrollSpeed, 2f);
-            setScrollSpeed(s);
-
-            typedArray.recycle();
+//            typedArray.recycle();
         }
 
         WindowManager wm = (WindowManager) getContext().getSystemService(Context.WINDOW_SERVICE);

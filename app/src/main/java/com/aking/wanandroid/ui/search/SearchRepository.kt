@@ -1,7 +1,6 @@
 package com.aking.wanandroid.ui.search
 
 import com.aking.wanandroid.app.base.BaseRepository
-import com.aking.wanandroid.app.base.BaseService
 import com.aking.wanandroid.common.http.RetrofitManager
 import com.aking.wanandroid.common.services.SearchService
 
@@ -13,8 +12,6 @@ import com.aking.wanandroid.common.services.SearchService
 class SearchRepository : BaseRepository {
 
     private val service = RetrofitManager.getService(SearchService::class.java)
-
-    override fun getService(): BaseService = service
 
     suspend fun getHotKeyList() = service.getSearchHotKey()
 

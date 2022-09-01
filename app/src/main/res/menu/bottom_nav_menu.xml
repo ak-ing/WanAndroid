@@ -2,17 +2,17 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_playlist"
+        android:id="@+id/playList"
         android:icon="@drawable/ic_playlist_48px"
         android:title="@string/title_playlist" />
 
     <item
-        android:id="@+id/navigation_search"
-        android:icon="@drawable/ic_search_48px"
-        android:title="@string/title_search" />
+        android:id="@+id/featured"
+        android:icon="@drawable/avd_featured_on"
+        android:title="@string/title_profile" />
 
     <item
-        android:id="@+id/navigation_profile"
-        android:icon="@drawable/ic_face_48px"
-        android:title="@string/title_profile" />
+        android:id="@+id/search"
+        android:icon="@drawable/ic_search_48px"
+        android:title="@string/title_search" />
 </menu>

@@ -6,6 +6,4 @@ package com.aking.wanandroid.app.base
  */
 interface BaseRepository {
 
-    fun getService(): BaseService
-
 }

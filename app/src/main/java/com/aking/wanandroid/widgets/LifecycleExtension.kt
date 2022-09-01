@@ -1,4 +1,4 @@
-package com.aking.wanandroid.util
+package com.aking.wanandroid.widgets
 
 import androidx.activity.ComponentActivity
 import androidx.fragment.app.Fragment
