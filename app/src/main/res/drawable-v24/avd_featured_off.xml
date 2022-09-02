@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/ic_explore_on">
+
+    <target
+        android:name="on"
+        android:animation="@animator/path_morph_off" />
+    <target
+        android:name="root"
+        android:animation="@animator/anim_scale" />
+
+
+</animated-vector>

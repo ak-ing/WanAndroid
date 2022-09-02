@@ -3,12 +3,22 @@
 
     <item
         android:id="@+id/selected"
-        android:drawable="@drawable/ic_explore_off"
-        android:state_checked="false" />
+        android:drawable="@drawable/ic_explore_on"
+        android:state_checked="true" />
 
     <item
         android:id="@+id/unselected"
-        android:drawable="@drawable/ic_explore_on"
-        android:state_checked="true" />
+        android:drawable="@drawable/ic_explore_off"
+        android:state_checked="false" />
+
+    <transition
+        android:drawable="@drawable/avd_featured_on"
+        android:fromId="@+id/unselected"
+        android:toId="@+id/selected" />
+
+    <transition
+        android:drawable="@drawable/avd_featured_off"
+        android:fromId="@+id/selected"
+        android:toId="@+id/unselected" />
 
 </animated-selector>
