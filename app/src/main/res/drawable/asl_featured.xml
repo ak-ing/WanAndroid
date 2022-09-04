@@ -14,7 +14,9 @@
     <transition
         android:drawable="@drawable/avd_featured_on"
         android:fromId="@+id/unselected"
-        android:toId="@+id/selected" />
+        android:toId="@+id/selected">
+
+    </transition>
 
     <transition
         android:drawable="@drawable/avd_featured_off"
