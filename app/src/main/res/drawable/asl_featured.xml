@@ -3,16 +3,16 @@
 
     <item
         android:id="@+id/selected"
-        android:drawable="@drawable/ic_explore_on"
+        android:drawable="@drawable/ic_explore_on1"
         android:state_checked="true" />
 
     <item
         android:id="@+id/unselected"
-        android:drawable="@drawable/ic_explore_off"
+        android:drawable="@drawable/ic_explore_off1"
         android:state_checked="false" />
 
     <transition
-        android:drawable="@drawable/avd_featured_on"
+        android:drawable="@drawable/avd_anim"
         android:fromId="@+id/unselected"
         android:toId="@+id/selected">
 
