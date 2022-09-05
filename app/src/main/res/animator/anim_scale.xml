@@ -8,7 +8,7 @@
             android:valueFrom="1.0"
             android:valueTo="0.7" />
         <objectAnimator
-            android:duration="300"
+            android:duration="200"
             android:propertyName="scaleX"
             android:valueFrom="0.7"
             android:valueTo="1.0" />
@@ -20,7 +20,7 @@
             android:valueFrom="1.0"
             android:valueTo="0.7" />
         <objectAnimator
-            android:duration="300"
+            android:duration="200"
             android:propertyName="scaleY"
             android:valueFrom="0.7"
             android:valueTo="1.0" />
