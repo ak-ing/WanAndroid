@@ -2,21 +2,19 @@
 <animated-selector xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/unselected"
+        android:drawable="@drawable/ic_explore"
+        android:state_checked="false" />
+
+    <item
         android:id="@+id/selected"
         android:drawable="@drawable/ic_explore_on"
         android:state_checked="true" />
 
-    <item
-        android:id="@+id/unselected"
-        android:drawable="@drawable/ic_explore_off"
-        android:state_checked="false" />
-
     <transition
-        android:drawable="@drawable/avd_featured_on"
+        android:drawable="@drawable/avd_featured_on1"
         android:fromId="@+id/unselected"
-        android:toId="@+id/selected">
-
-    </transition>
+        android:toId="@+id/selected" />
 
     <transition
         android:drawable="@drawable/avd_featured_off"
