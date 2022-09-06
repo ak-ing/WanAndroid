@@ -6,10 +6,10 @@
     app:startDestination="@id/featured">
 
     <fragment
-        android:id="@+id/playList"
-        android:name="com.aking.wanandroid.ui.playlist.PlayListFragment"
+        android:id="@+id/blackBox"
+        android:name="com.aking.wanandroid.ui.blackbox.BlackBoxFragment"
         android:label="PlayListFragment"
-        tools:layout="@layout/fragment_playlist" />
+        tools:layout="@layout/fragment_balck_box" />
     <fragment
         android:id="@+id/featured"
         android:name="com.aking.wanandroid.ui.featured.FeaturedFragment"

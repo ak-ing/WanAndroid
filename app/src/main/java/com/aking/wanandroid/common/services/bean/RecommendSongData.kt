@@ -7,8 +7,8 @@ import com.aking.wanandroid.player.bean.BaseSong
  * God bless my code!
  */
 data class RecommendSongData(
-    val dailySongs: List<DailySong>,
-    val recommendReasons: List<RecommendReason>
+    val dailySongs: List<DailySong> = mutableListOf(),
+    val recommendReasons: List<RecommendReason> = mutableListOf()
 )
 
 data class DailySong(

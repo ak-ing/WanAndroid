@@ -30,6 +30,7 @@ import androidx.annotation.DrawableRes
 import androidx.annotation.StyleRes
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.res.use
+import androidx.fragment.app.Fragment
 
 
 /**
@@ -49,6 +50,17 @@ inline fun <reified A> Context.startActivity(noinline block: (Intent.() -> Unit)
         startActivity(this.apply { block?.invoke(this) })
     }
 }
+
+
+/**
+ * 设置状态栏颜色
+ */
+fun Fragment.statusBarColor(@AttrRes themeAttrId: Int) {
+    activity?.let {
+        it.window.statusBarColor = it.themeColor(themeAttrId)
+    }
+}
+
 
 /**
  * Retrieve a color from the current [android.content.res.Resources.Theme].

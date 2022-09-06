@@ -9,6 +9,8 @@
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/asl_featured.xml" value="0.164" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/avd_anim (1).xml" value="0.177" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/avd_anim.xml" value="0.177" />
+        <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/avd_explore_off.xml" value="0.177" />
+        <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/avd_explore_on.xml" value="0.177" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/avd_featured_off1.xml" value="0.177" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/avd_featured_on.xml" value="0.164" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/avd_featured_on1.xml" value="0.177" />
@@ -17,9 +19,12 @@
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/bg_search.xml" value="0.164" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/face_retouching_off.xml" value="0.164" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/face_retouching_on.xml" value="0.164" />
+        <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/ic_black_box.xml" value="0.177" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/ic_explore.xml" value="0.177" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/ic_explore_off.xml" value="0.164" />
+        <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/ic_explore_off1.xml" value="0.177" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/ic_explore_on.xml" value="0.164" />
+        <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/ic_explore_on1.xml" value="0.177" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/ic_face_48px.xml" value="0.164" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/ic_launcher_background.xml" value="0.164" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/drawable/ic_playlist_48px.xml" value="0.164" />
@@ -31,14 +36,9 @@
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/layout/fragment_featured.xml" value="0.109375" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/layout/fragment_search.xml" value="0.2" />
+        <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/layout/item_text_flowlayout.xml" value="0.24947916666666667" />
         <entry key="..\:/data/AndroidStudioProjects/WanAndroid/app/src/main/res/menu/bottom_nav_menu.xml" value="0.24947916666666667" />
         <entry key="..\:/githome/WanAndroid/WanAndroid/app/src/main/res/drawable-v24/avatar_none.xml" value="0.155" />
-<<<<<<< HEAD
-        <entry key="..\:/githome/WanAndroid/WanAndroid/app/src/main/res/drawable-v24/avd_featured_off.xml" value="0.155" />
-        <entry key="..\:/githome/WanAndroid/WanAndroid/app/src/main/res/drawable/avd_anim.xml" value="0.1015" />
-        <entry key="..\:/githome/WanAndroid/WanAndroid/app/src/main/res/drawable/avd_featured_on.xml" value="0.155" />
-=======
->>>>>>> f1d52136f3782418b1ea8282a9672cc3f44fca79
         <entry key="..\:/githome/WanAndroid/WanAndroid/app/src/main/res/drawable/bg_item_flowlayout.xml" value="0.155" />
         <entry key="..\:/githome/WanAndroid/WanAndroid/app/src/main/res/drawable/bg_search.xml" value="0.155" />
         <entry key="..\:/githome/WanAndroid/WanAndroid/app/src/main/res/drawable/ic_playlist_48px.xml" value="0.155" />

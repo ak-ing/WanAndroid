@@ -6,7 +6,7 @@ package com.aking.wanandroid.common.services.bean
  * @Description: 热搜列表(简略)
  */
 data class HotKeyBean(
-    val hots: List<Hot>
+    val hots: List<Hot> = mutableListOf()
 )
 
 data class Hot(

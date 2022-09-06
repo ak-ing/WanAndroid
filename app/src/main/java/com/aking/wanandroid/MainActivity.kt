@@ -33,7 +33,7 @@ class MainActivity : VDBaseActivity() {
 
             navController.addOnDestinationChangedListener { _, destination, _ ->
                 when (destination.id) {
-                    R.id.playList, R.id.featured, R.id.search -> navView.show()
+                    R.id.blackBox, R.id.featured, R.id.search -> navView.show()
                     else -> navView.hide()
                 }
             }
@@ -43,7 +43,7 @@ class MainActivity : VDBaseActivity() {
 
     private fun changeProfileDot(isShown: Boolean) {
         vdb.navView.getOrCreateBadge(R.id.featured).also { badge ->
-            badge.backgroundColor = themeColor(com.google.android.material.R.attr.bottomNavigationStyle)
+            badge.backgroundColor = themeColor(com.google.android.material.R.attr.colorSurface)
             badge.isVisible = isShown
         }
     }

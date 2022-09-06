@@ -14,7 +14,6 @@ class FeaturedFragment : VDBaseFragment<FragmentFeaturedBinding>(R.layout.fragme
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
     }
 
 }

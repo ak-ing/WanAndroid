@@ -13,6 +13,23 @@
         app:layoutFullscreen="@{true}"
         tools:context=".MainActivity">
 
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:paddingTopSystemWindowInsets="@{true}">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/materialToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:title="音乐" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/nav_view"
             android:layout_width="match_parent"
@@ -27,11 +44,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="@dimen/bottom_app_bar_height"
+            android:paddingTop="@dimen/appbarLayout_size"
             app:defaultNavHost="true"
-            app:layout_constraintBottom_toTopOf="@id/nav_view"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
             app:navGraph="@navigation/nav_graph" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
