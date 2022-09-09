@@ -1,5 +1,6 @@
 package com.aking.wanandroid.common.http.adapter
 
+import android.util.Log
 import okhttp3.Request
 import okio.Timeout
 import retrofit2.Call

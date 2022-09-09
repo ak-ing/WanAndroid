@@ -1,25 +1,27 @@
 package com.aking.wanandroid.ui.search
 
-import androidx.lifecycle.ViewModel
-import com.aking.wanandroid.util.AppLog
-import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.flow
+import androidx.lifecycle.liveData
+import androidx.lifecycle.viewModelScope
+import com.aking.wanandroid.app.base.BaseViewModel
+import com.aking.wanandroid.common.http.adapter.NetworkResponse
+import kotlinx.coroutines.flow.SharingStarted
+import kotlinx.coroutines.flow.stateIn
 
 /**
  * Created by Rick on 2022-08-16  15:54.
  * God bless my code!
  * @Description:
  */
-class SearchViewModel : ViewModel() {
+class SearchViewModel : BaseViewModel() {
 
     private val repository = SearchRepository()
 
-    val hotKeyLiveData = flow { emit(repository.getHotKeyList()) }.catch {
-        AppLog.e(msg = it.message.toString())
+    val hotKeyFlow = liveData {
+        repository.getHotKeyList()
+            .stateIn(viewModelScope, SharingStarted.WhileSubscribed(), NetworkResponse.Loading())
+            .collect(this::emit)
     }
 
-    val dailyLiveData = flow { emit(repository.getDailyRecommendSongs()) }.catch {
-        AppLog.e(msg = it.message.toString())
-    }
+    val dailyFlow = repository.getDailyRecommendSongs()
 
 }

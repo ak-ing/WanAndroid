@@ -10,12 +10,5 @@ import com.aking.wanandroid.common.http.RetrofitManager
  */
 class MainRepository : BaseRepository {
 
-    private val service = RetrofitManager.getService(BaseService::class.java)
-
-
-    /**
-     * 匿名登录
-     */
-    suspend fun registerByAnonymous() = service.registerByAnonymous()
 
 }

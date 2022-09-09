@@ -25,6 +25,11 @@ sealed class NetworkResponse<out T : Any> {
      */
     data class UnknownError(val throwable: Throwable) : NetworkResponse<Nothing>()
 
+    /**
+     * 加载中
+     */
+    class Loading() : NetworkResponse<Nothing>()
+
 }
 
 
@@ -38,6 +43,7 @@ fun <T : Any> NetworkResponse<T>.getOrNull(): T? =
         is NetworkResponse.Success -> data
         is NetworkResponse.BizError -> null
         is NetworkResponse.UnknownError -> null
+        else -> null
     }
 
 fun <T : Any> NetworkResponse<T>.exceptionOrNull(): Throwable? =
@@ -45,6 +51,7 @@ fun <T : Any> NetworkResponse<T>.exceptionOrNull(): Throwable? =
         is NetworkResponse.Success -> null
         is NetworkResponse.BizError -> ApiException(errorCode, errorMessage)
         is NetworkResponse.UnknownError -> throwable
+        else -> ApiException(-1, "Loading")
     }
 
 fun <T : Any> NetworkResponse<T>.getOrThrow(): T =
@@ -52,6 +59,7 @@ fun <T : Any> NetworkResponse<T>.getOrThrow(): T =
         is NetworkResponse.Success -> data
         is NetworkResponse.BizError -> throw ApiException(errorCode, errorMessage)
         is NetworkResponse.UnknownError -> throw throwable
+        else -> throw ApiException(-1, "Loading")
     }
 
 inline fun <T : Any> NetworkResponse<T>.getOrElse(default: (NetworkResponse<T>) -> T): T =

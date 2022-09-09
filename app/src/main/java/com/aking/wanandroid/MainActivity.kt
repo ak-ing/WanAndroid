@@ -1,8 +1,12 @@
 package com.aking.wanandroid
 
+import android.graphics.RenderEffect
+import android.graphics.Shader
+import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.activity.viewModels
+import androidx.annotation.RequiresApi
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.aking.wanandroid.app.base.VDBaseActivity
@@ -17,7 +21,6 @@ class MainActivity : VDBaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        vm.init()
     }
 
     override fun onStart() {

@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import com.aking.wanandroid.app.App
 import com.aking.wanandroid.common.http.RetrofitManager
 import com.aking.wanandroid.common.http.adapter.getOrElse
-import com.aking.wanandroid.app.base.BaseService
+import com.aking.wanandroid.common.services.MusicService
 import com.aking.wanandroid.common.services.bean.SongUrlData
 import com.aking.wanandroid.player.bean.BaseSong
 import com.aking.wanandroid.player.controller.ICacheProxy
@@ -26,7 +26,7 @@ class PlayerController : IPlayerController {
     private val player = MediaPlayer()     //媒体对象
     private lateinit var mCacheProxy: ICacheProxy
     private val mPlayingInfoManager = PlayingInfoManager()
-    private val service = RetrofitManager.getService(BaseService::class.java)
+    private val service = RetrofitManager.getService(MusicService::class.java)
 
     private var mIsPaused = true
     private var mIsChangingPlayingMusic = false

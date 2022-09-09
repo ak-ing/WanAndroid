@@ -26,7 +26,7 @@ data class DailySong(
     val fee: Int,
     val ftype: Int,
     val hr: Any,
-    val mark: Int,
+    val mark: Long,
     val mst: Int,
     val mv: Int,
     val no: Int,
